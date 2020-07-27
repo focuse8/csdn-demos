@@ -17,9 +17,9 @@ public class HelloBeanDefinitionParser implements BeanDefinitionParser {
         String text = element.getAttribute("text");
         GenericBeanDefinition bd = new GenericBeanDefinition();
         bd.setScope("singleton");//单例
-        bd.setBeanClassName("com.focuse.springschema.printer.StringPrinter");
+        bd.setBeanClassName("com.focuse.springschema.annotationcomps.StringPrinter");
         bd.getPropertyValues().add("text", text); //设置属性
-        parserContext.getRegistry().registerBeanDefinition("com.focuse.springschema.printer.StringPrinter", bd);
+        parserContext.getRegistry().registerBeanDefinition("com.focuse.springschema.annotationcomps.StringPrinter", bd);
         return bd;
     }
 }
