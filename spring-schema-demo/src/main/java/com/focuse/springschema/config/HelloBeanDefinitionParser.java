@@ -4,6 +4,8 @@ import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.support.GenericBeanDefinition;
 import org.springframework.beans.factory.xml.BeanDefinitionParser;
 import org.springframework.beans.factory.xml.ParserContext;
+import org.springframework.context.annotation.AnnotationConfigUtils;
+import org.springframework.core.annotation.AnnotationUtils;
 import org.w3c.dom.Element;
 
 /**

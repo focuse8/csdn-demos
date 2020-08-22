@@ -1,7 +1,6 @@
-package com.focuse.demo;
+package com.focuse.demo.printer;
 
-import org.springframework.context.annotation.ImportAware;
-import org.springframework.core.type.AnnotationMetadata;
+import org.springframework.stereotype.Component;
 
 /**
  * @author ：
@@ -9,8 +8,8 @@ import org.springframework.core.type.AnnotationMetadata;
  * @description：
  * @modified By：
  */
-
-public class DemoPrinterAware  implements ImportAware {
+@Component
+public class DemoPrinter {
     private String text;
 
     public String getText() {
@@ -23,9 +22,5 @@ public class DemoPrinterAware  implements ImportAware {
 
     public String print() {
         return text;
-    }
-
-    public void setImportMetadata(AnnotationMetadata importMetadata) {
-
     }
 }
