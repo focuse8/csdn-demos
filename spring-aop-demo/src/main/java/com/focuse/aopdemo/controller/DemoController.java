@@ -1,6 +1,7 @@
 package com.focuse.aopdemo.controller;
 
 import com.focuse.aopdemo.printer.DemoPrinter;
+import com.focuse.aopdemo.printer.Printer;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,15 +19,13 @@ import javax.annotation.Resource;
 public class DemoController {
 
     @Resource
-    private  DemoPrinter demoPrinter;
+    private DemoPrinter demoPrinter;
 
     @RequestMapping("hello")
     public String hello(@RequestParam("text") String text) {
+        demoPrinter.getName();
         return demoPrinter.print(text);
     }
 
-    @RequestMapping("hello_pri")
-    private String helloPri(@RequestParam("text") String text) {
-        return demoPrinter.print(text);
-    }
+
 }

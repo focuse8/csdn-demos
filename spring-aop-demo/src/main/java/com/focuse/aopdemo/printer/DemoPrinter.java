@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @modified By：
  */
 @Component
-public class DemoPrinter {
+public class DemoPrinter implements Printer{
     private String name = "demoPrinter";
 
     public String getName() {
@@ -22,9 +22,5 @@ public class DemoPrinter {
 
     public String print(String text) {
         return name + ":" + text;
-    }
-
-    private String printPri() {
-        return name + "pri";
     }
 }

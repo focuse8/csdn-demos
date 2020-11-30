@@ -3,17 +3,43 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <context:annotation-config></context:annotation-config>
     <context:component-scan base-package="com.focuse.aopdemo" />
     <mvc:annotation-driven />
 
-    <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+
+    <!--<aop:config >-->
+        <!--&lt;!&ndash; 配置一个pointcut &ndash;&gt;-->
+        <!--<aop:pointcut id="demoPointcut" expression="target(com.focuse.aopdemo.printer.DemoPrinter)"></aop:pointcut>-->
+        <!--&lt;!&ndash; 配置一个切面，切面的bean是demoAspect &ndash;&gt;-->
+        <!--<aop:aspect id="demoAspect" ref="demoAspect">-->
+            <!--&lt;!&ndash; 配置advice，指定advice执行的方法demoAspect里面的aroundAdvice，同时关联pointcut &ndash;&gt;-->
+            <!--<aop:around method="aroundAdvice" pointcut-ref="demoPointcut" />-->
+        <!--</aop:aspect>-->
+
+    <!--</aop:config>-->
+
+    <!--<aop:config>-->
+        <!--<aop:pointcut id="demoPointcut" expression="target(com.focuse.aopdemo.printer.DemoPrinter)"></aop:pointcut>-->
+        <!--&lt;!&ndash; 配置advisor关联advice和pointcut&ndash;&gt;-->
+        <!--<aop:advisor advice-ref="demoAdvisor" pointcut-ref="demoPointcut"></aop:advisor>-->
+    <!--</aop:config>-->
+    
+
+    <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator" >
+        <property name="proxyTargetClass" value="true" />
         <property name="beanNames">
             <list>
-                <value>demoController</value>
+                <value>demoPrinter</value>
+            </list>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>beanNameAdvice</value>
             </list>
         </property>
     </bean>

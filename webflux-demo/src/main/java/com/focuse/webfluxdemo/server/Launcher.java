@@ -13,6 +13,9 @@ import org.springframework.web.reactive.config.EnableWebFlux;
 @SpringBootApplication(scanBasePackages = {"com.focuse.webfluxdemo.server"})
 @EnableWebFlux
 public class Launcher {
+
+
+
     public static void main(String... args) {
         SpringApplication.run(Launcher.class, args);
     }

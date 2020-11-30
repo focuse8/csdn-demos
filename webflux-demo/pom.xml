@@ -11,14 +11,14 @@
     <artifactId>webflux-demo</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
-    <name>demo</name>
+    <name>webflux-demo</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
         <java.version>1.8</java.version>
         <spring.version>4.3.17.RELEASE</spring.version>
         <servlet.version>3.0-alpha-1</servlet.version>
-        <springboot.version>2.3.3.RELEASE</springboot.version>
+        <springboot.version>2.3.1.RELEASE</springboot.version>
     </properties>
 
     <dependencies>
