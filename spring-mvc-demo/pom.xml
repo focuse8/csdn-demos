@@ -6,7 +6,7 @@
     <artifactId>spring-mvc-demo</artifactId>
     <version>0.0.1</version>
     <packaging>war</packaging>
-    <name>demo</name>
+    <name>spring-mvc-demo</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
