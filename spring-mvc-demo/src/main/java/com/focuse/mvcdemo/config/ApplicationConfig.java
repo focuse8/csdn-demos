@@ -2,6 +2,7 @@ package com.focuse.mvcdemo.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 /**
  * @author ：
@@ -10,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * @modified By：
  */
 @Configuration
+@EnableWebMvc
 @ComponentScan(basePackages = {"com.focuse.mvcdemo"})
 public class ApplicationConfig {
 }
