@@ -3,10 +3,11 @@ package com.focuse.bootdemo.config;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration;
-import org.springframework.boot.web.servlet.ServletRegistrationBean;
+import org.springframework.boot.autoconfigure.web.servlet.DispatcherServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.springframework.web.servlet.DispatcherServlet;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 /**
  * @author ：
@@ -15,6 +16,7 @@ import org.springframework.web.servlet.DispatcherServlet;
  * @modified By：
  */
 @SpringBootApplication(exclude = {DispatcherServletAutoConfiguration.class})
+@EnableWebMvc
 @Import(ApplicationConfig.class)
 public class Launcher {
     public static void main(String[] args) {
@@ -28,11 +30,9 @@ public class Launcher {
     }
 
     @Bean
-    public ServletRegistrationBean dispatchServletBean(DispatcherServlet dispatcherServlet) {
-        ServletRegistrationBean dispatchServletBean = new ServletRegistrationBean();
+    public DispatcherServletRegistrationBean dispatchServletBean(DispatcherServlet dispatcherServlet) {
+        DispatcherServletRegistrationBean dispatchServletBean = new DispatcherServletRegistrationBean(dispatcherServlet, "/");
         dispatchServletBean.setLoadOnStartup(1);
-        dispatchServletBean.addUrlMappings("/*");
-        dispatchServletBean.setServlet(dispatcherServlet);
         return dispatchServletBean;
     }
 }
