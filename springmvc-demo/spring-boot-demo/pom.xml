@@ -45,15 +45,17 @@
 
     <build>
         <plugins>
+
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.0.0</version>
             </plugin>
 
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>9.3.9.v20160517</version>
+                <version>9.4.29.v20200521</version>
                 <configuration>
                     <!-- 端口配置 -->
                     <httpConnector>

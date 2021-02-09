@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.lang.reflect.GenericArrayType;
+import java.lang.reflect.Type;
 
 /**
  * @author ：

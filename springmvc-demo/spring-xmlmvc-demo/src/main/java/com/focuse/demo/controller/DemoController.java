@@ -1,18 +1,24 @@
 package com.focuse.demo.controller;
 
+<<<<<<< HEAD:demo/src/main/java/com/focuse/demo/controller/DemoController.java
 import com.focuse.demo.DemoPrinterAware;
 import org.springframework.context.annotation.Import;
+=======
+>>>>>>> d937decc1b7e4ad68a377fa6a9f871846dd62baa:spring-xmlmvc-demo/src/main/java/com/focuse/demo/controller/DemoController.java
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.servlet.AsyncContext;
 import javax.servlet.http.HttpServletRequest;
+<<<<<<< HEAD:demo/src/main/java/com/focuse/demo/controller/DemoController.java
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.lang.reflect.WildcardType;
 import java.util.List;
 import java.util.Map;
+=======
+>>>>>>> d937decc1b7e4ad68a377fa6a9f871846dd62baa:spring-xmlmvc-demo/src/main/java/com/focuse/demo/controller/DemoController.java
 
 /**
  * @author ：
@@ -22,9 +28,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/focuse")
-@Import(DemoPrinterAware.class)
 public class DemoController {
-
     @Resource
     private HttpServletRequest request;
 
@@ -46,6 +50,7 @@ public class DemoController {
     }
 
     @RequestMapping("hello3")
+<<<<<<< HEAD:demo/src/main/java/com/focuse/demo/controller/DemoController.java
     public String hello(HttpServletRequest request3) {
 
         Object object = request.getAttribute("focuse.test.async");
@@ -62,6 +67,10 @@ public class DemoController {
         index++;
         System.out.println(request3.getRequestURI());
         return "hello world3!";
+=======
+    public String hello3() {
+        return "hello world!";
+>>>>>>> d937decc1b7e4ad68a377fa6a9f871846dd62baa:spring-xmlmvc-demo/src/main/java/com/focuse/demo/controller/DemoController.java
     }
 
     public static void main(String[] arges) throws Exception{
